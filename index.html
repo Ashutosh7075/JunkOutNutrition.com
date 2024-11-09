@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition & Diet Planning</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Section with Logo -->
+    <header>
+        <img src="assets/images/logo.png" alt="Nutrition & Diet Planning Logo" width="150">
+        <h1>Nutrition & Diet Planning</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#calculator">BMI Calculator</a>
+            <a href="#contact">Contact</a>
+            <a id="logout" href="#" onclick="logout()" style="display: none;">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <img src="assets/images/hero.jpg" alt="Healthy food and lifestyle" style="width: 100%; height: auto; border-radius: 10px;">
+        <h2>Empowering Your Health Journey</h2>
+        <p>Our goal is to support you in achieving a balanced, healthy lifestyle through personalized nutrition and diet plans.</p>
+        <button onclick="document.getElementById('login-section').scrollIntoView()">Get Started</button>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login-section">
+        <h2>Login</h2>
+        <form onsubmit="login(event)">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="number" id="age" placeholder="Age" required>
+            <input type="number" id="login-height" placeholder="Height (cm)" required>
+            <input type="number" id="login-weight" placeholder="Weight (kg)" required>
+            <select id="goal">
+                <option value="" disabled selected>Select your goal</option>
+                <option value="Lose Weight">Lose Weight</option>
+                <option value="Build Muscle">Build Muscle</option>
+                <option value="Improve Health">Improve Health</option>
+                <option value="Maintain Weight">Maintain Weight</option>
+            </select>
+            <button type="submit">Login</button>
+            <p id="login-error" style="color: red;"></p>
+        </form>
+    </section>
+
+    <!-- User Profile Section -->
+    <section id="user-profile" style="display: none;">
+        <h2>Welcome, <span id="user-name"></span></h2>
+        <p>Age: <span id="user-age"></span></p>
+        <p>Height: <span id="user-height"></span> cm</p>
+        <p>Weight: <span id="user-weight"></span> kg</p>
+        <p>Goal: <span id="user-goal"></span></p>
+        <p id="goal-message"></p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <img src="assets/images/about.jpg" alt="Our team in action" style="width: 100%; height: auto; border-radius: 8px;">
+        <p>We are a dedicated team of nutrition experts focused on helping you achieve a healthier, happier life through personalized guidance and diet plans.</p>
+    </section>
+
+    <!-- BMI Calculator Section -->
+    <section id="calculator">
+        <h2>BMI Calculator</h2>
+        <input type="number" id="calc-weight" placeholder="Weight (kg)" required>
+        <input type="number" id="calc-height" placeholder="Height (cm)" required>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <p id="bmi-result"></p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <img src="assets/images/contact.jpg" alt="Our office location" style="width: 100%; height: auto; border-radius: 8px;">
+        <p>Email: info@nutritionanddiet.com</p>
+        <p>Phone: +123 456 7890</p>
+        <p>Address: 123 Health Street, Wellness City</p>
+    </section>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
